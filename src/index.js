@@ -13,8 +13,6 @@ app.use(express.urlencoded({ extended: false }))
 
 require('./controllers/authController')(app);
 
-app.get('/', function (req, res) {
-    res.send('Oi')
-})
+
 
 app.listen(3000);
