@@ -11,8 +11,6 @@ Não se utiliza mais
 app.use(express.json())
 //app.use(express.urlencoded({ extended: false }))
 
-require('./app/controllers/authController')(app);
-
-require('./app/controllers/projectController')(app);
+require('./controllers/index')(app);
 
 app.listen(3000);
