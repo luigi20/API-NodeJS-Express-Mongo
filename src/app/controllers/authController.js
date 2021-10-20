@@ -2,8 +2,10 @@ const express = require('express');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const authconfig = require('../../config/authconfig');
+const authconfig = require('../../config/auth.json');
+const crypto = require('crypto');
 const router = express.Router();
+const mailer = require('mailer');
 
 function generateToken(params = {}) {
     const token = jwt.sign(params, authconfig.secret, {
@@ -44,4 +46,25 @@ router.post('/authenticate', async (req, res) => {
 
 });
 
+router.post('/forgot_password', async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).send({ Error: "User not found" });
+        }
+        const token = crypto.randomBytes(20).toString('hex');
+        const now = new Date();
+        now.setHours(now.getHours() + 1);
+        await User.findByIdAndUpdate(user.id, {
+            '$set': {
+                'passwordResetToken': token,
+                'passwordExpiresToken': now
+            }
+        });
+        console.log(token, now);
+    } catch (err) {
+        return res.status(400).send({ Error: "Wrong password, try again" });
+    }
+})
 module.exports = app => app.use('/auth', router);
