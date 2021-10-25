@@ -9,7 +9,7 @@ Não se utiliza mais
 */
 
 app.use(express.json())
-//app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }))
 
 require('./app/controllers/index')(app);
 

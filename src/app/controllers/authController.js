@@ -59,7 +59,7 @@ router.post('/forgot_password', async (req, res) => {
         await User.findByIdAndUpdate(user.id, {
             '$set': {
                 'passwordResetToken': token,
-                'passwordExpiresToken': now
+                'passwordResetExpires': now
             }
         });
         mailer.sendMail({
@@ -69,14 +69,36 @@ router.post('/forgot_password', async (req, res) => {
             context: { token },
         }, (err) => {
             if (err) {
-                console.log(err);
                 return res.status(400).send({ Error: "Cannot send forgot password email" })
             }
             return res.send();
         })
     } catch (err) {
-        console.log(err);
         return res.status(400).send({ Error: "Wrong password, try again" });
+    }
+})
+
+router.post('/reset_password', async (req, res) => {
+    const { email, token, password } = req.body;
+    try {
+        const user = await User.findOne({ email })
+            .select('+passwordResetToken passwordResetExpires');
+        if (!user) {
+            return res.status(400).send({ Error: "User not found!!!" });
+        }
+        if (token !== user.passwordResetToken) {
+            return res.status(400).send({ Error: "Token invalid!!!" });
+        }
+        const now = Date.now();
+        if (now > user.passwordResetExpires) {
+            return res.status(400).send({ Error: "Token expired!!! Generate a new one" });
+        }
+        user.password = password;
+        await user.save();
+        res.send();
+    } catch (err) {
+        console.log(err);
+        res.status(400).send({ Error: "Cannot password. Try again!!!" })
     }
 })
 module.exports = app => app.use('/auth', router);
