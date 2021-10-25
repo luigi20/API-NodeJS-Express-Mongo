@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const authconfig = require('../../config/auth.json');
 const crypto = require('crypto');
 const router = express.Router();
-const mailer = require('mailer');
+const mailer = require('../../modules/mailer');
 
 function generateToken(params = {}) {
     const token = jwt.sign(params, authconfig.secret, {
@@ -62,8 +62,20 @@ router.post('/forgot_password', async (req, res) => {
                 'passwordExpiresToken': now
             }
         });
-        console.log(token, now);
+        mailer.sendMail({
+            to: email,
+            from: 'luisopentec@gmail.com',
+            template: 'auth/forgot_password',
+            context: { token },
+        }, (err) => {
+            if (err) {
+                console.log(err);
+                return res.status(400).send({ Error: "Cannot send forgot password email" })
+            }
+            return res.send();
+        })
     } catch (err) {
+        console.log(err);
         return res.status(400).send({ Error: "Wrong password, try again" });
     }
 })
