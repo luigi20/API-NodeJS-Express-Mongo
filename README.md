@@ -35,7 +35,7 @@ Sinto que aprendi muito sobre o funcionamento de uma API, tendo utilizado ferram
  </p>
  
    <p align="center">
-  <img src=" https://www.redspark.io/wp-content/uploads/2020/02/mongodb.jpg" width="150" title="MongoDb" align="center">
+  <img src="https://www.redspark.io/wp-content/uploads/2020/02/mongodb.jpg" width="150" title="MongoDb" align="center">
   <p>MongoDb, banco de dados não relacional utilizado para a permanência dos dados do projeto</p>
  </p>
 
