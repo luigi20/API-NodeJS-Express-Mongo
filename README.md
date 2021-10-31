@@ -25,17 +25,17 @@ Sinto que aprendi muito sobre o funcionamento de uma API, tendo utilizado ferram
  </p>
  
  <p align="center">
-  <img src="https://nodemailer.com/nm_logo_200x136.png" width="150" title="NodeJS" align="center">
+  <img src="https://nodemailer.com/nm_logo_200x136.png" width="150" title="NodeMailer" align="center">
   <p>NodeMailer, framework foi usado para enviar emails ao usuário para que o pudesse resetar sua senha por meio de tokens.</p>
  </p>
  
   <p align="center">
-  <img src="https://expressjs.com/images/express-facebook-share.png" width="150" title="NodeJS" align="center">
+  <img src="https://expressjs.com/images/express-facebook-share.png" width="150" title="Express" align="center">
   <p>Express, framework foi usado para tratativas de rotas e requests no NodeJs</p>
  </p>
  
    <p align="center">
-  <img src=" https://www.redspark.io/wp-content/uploads/2020/02/mongodb.jpg" width="150" title="NodeJS" align="center">
+  <img src=" https://www.redspark.io/wp-content/uploads/2020/02/mongodb.jpg" width="150" title="MongoDb" align="center">
   <p>MongoDb, banco de dados não relacional utilizado para a permanência dos dados do projeto</p>
  </p>
 
