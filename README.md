@@ -1,6 +1,6 @@
 # API
 
- ![API]
+
 
 
 ## API em NODEJS
@@ -10,7 +10,6 @@ Esse repositório é referente a uma API feita em NodeJS + Express + NodeMailer 
 A ideia do projeto é uma API, a qual tem como função a autenticação e registro de usuário com a utilização de tokens (JWT). Além disso, existe a função de trocar a senha ao
 esquecê-la e como fazer relacionamentos simples, mesmo em um banco de dados NoSQL.
 
-a
 
 ## O Destaque
 
