@@ -3,7 +3,7 @@
 
 
 
-## API em NODEJS
+## API em NodeJS + Express + NodeMailer e banco de dados MongoDb
 
 Esse repositório é referente a uma API feita em NodeJS + Express + NodeMailer e banco de dados MongoDb.
 
@@ -23,11 +23,22 @@ Sinto que aprendi muito sobre o funcionamento de uma API, tendo utilizado ferram
   <img src="https://pplware.sapo.pt/wp-content/uploads/2016/05/nodejs_04.jpg" width="150" title="NodeJS" align="center">
   <p>NodeJS foi usado para o backend, uma ferramenta poderosa inspirado no motor do navegador útil e bastante eficaz. Porém essa parte ficou de ser estudada pro futuro segurança para API a qual foi desenvolvida.</p>
  </p>
-
+ 
  <p align="center">
-  <img src="https://i1.wp.com/leblogducodeur.fr/wp-content/uploads/2019/12/composants-reactjs.png?fit=339%2C149&ssl=1" width="150" alt="React JS" align="center">
-  <p>ReactJS foi usado para o frontend, o ReactJS para desenvolver o frontend web da aplicação, curti demais pois o processo foi ver o projeto no Figma e dar vida a ele no formato de SPA ( Single-Page Application).</p>
-</p>
+  <img src="https://nodemailer.com/nm_logo_200x136.png" width="150" title="NodeJS" align="center">
+  <p>NodeMailer, framework foi usado para enviar emails ao usuário para que o pudesse resetar sua senha por meio de tokens.</p>
+ </p>
+ 
+  <p align="center">
+  <img src="https://expressjs.com/images/express-facebook-share.png" width="150" title="NodeJS" align="center">
+  <p>Express, framework foi usado para tratativas de rotas e requests no NodeJs</p>
+ </p>
+ 
+   <p align="center">
+  <img src=" https://www.redspark.io/wp-content/uploads/2020/02/mongodb.jpg" width="150" title="NodeJS" align="center">
+  <p>MongoDb, banco de dados não relacional utilizado para a permanência dos dados do projeto</p>
+ </p>
+
 
 
  
