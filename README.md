@@ -39,7 +39,11 @@ Sinto que aprendi muito sobre o funcionamento de uma API, tendo utilizado ferram
   <p>MongoDb, banco de dados não relacional utilizado para a permanência dos dados do projeto</p>
  </p>
 
+### Features
 
+- Cadastro e Autenticação de usuário
+- Cadastro, Alteração e Remoção de Projetos
+- Cadastro de Tarefas
 
  
 
